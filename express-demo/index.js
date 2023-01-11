@@ -57,6 +57,8 @@ app.post('/api/courses', function(req, res){
 });
 
 // PUT
+// Update name for given course id
+
 app.put('/api/courses/:id',function(req, res){
 
 	const course = courses.find(c => c.id === parseInt(req.params.id));
