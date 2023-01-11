@@ -31,7 +31,9 @@ app.get('/api/courses/:id',function(req, res){
 	res.send(req.query); // get query params from URL after question mark ( ? )
 });
 */
+
 // POST
+// Add a new course
 app.post('/api/courses', function(req, res){
 
 /*	const schema = Joi.object({ 
@@ -39,7 +41,7 @@ app.post('/api/courses', function(req, res){
 	});
 
 	const result = schema.validate(req.body);*/
-	
+
 	const result = validateCourse(req.body);
 	if(result.error){
 		res.status(400).send(result.error.details[0].message);
